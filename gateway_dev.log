@@ -1,0 +1,155 @@
+
+> api-gateway@1.0.0 dev
+> node --watch src/server.js
+
+◇ injected env (11) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+{"level":30,"time":"2026-04-09T09:05:10.315Z","service":"api-gateway","env":"development","service":"user-service","pathPrefix":"/api/users","target":"http://localhost:3001","msg":"Registering proxy route: /api/users → http://localhost:3001"}
+{"level":30,"time":"2026-04-09T09:05:10.317Z","service":"api-gateway","env":"development","service":"product-service","pathPrefix":"/api/products","target":"http://localhost:3002","msg":"Registering proxy route: /api/products → http://localhost:3002"}
+{"level":30,"time":"2026-04-09T09:05:10.317Z","service":"api-gateway","env":"development","service":"order-service","pathPrefix":"/api/orders","target":"http://localhost:3003","msg":"Registering proxy route: /api/orders → http://localhost:3003"}
+{"level":30,"time":"2026-04-09T09:05:10.326Z","service":"api-gateway","env":"development","port":8000,"env":"development","pid":8104,"msg":"🚀 API Gateway running on port 8000 [development]"}
+{"level":50,"time":"2026-04-09T09:05:10.330Z","service":"api-gateway","env":"development","err":"","msg":"Redis: connection error"}
+{"level":30,"time":"2026-04-09T09:05:10.330Z","service":"api-gateway","env":"development","attempt":1,"delayMs":200,"msg":"Redis: reconnecting..."}
+{"level":40,"time":"2026-04-09T09:05:10.330Z","service":"api-gateway","env":"development","msg":"Redis: connection closed"}
+{"level":40,"time":"2026-04-09T09:05:10.330Z","service":"api-gateway","env":"development","err":"Connection is closed.","msg":"Redis: initial connection failed, gateway will use in-memory fallbacks"}
+{"level":50,"time":"2026-04-09T09:05:10.533Z","service":"api-gateway","env":"development","err":"","msg":"Redis: connection error"}
+{"level":30,"time":"2026-04-09T09:05:10.533Z","service":"api-gateway","env":"development","attempt":2,"delayMs":400,"msg":"Redis: reconnecting..."}
+{"level":40,"time":"2026-04-09T09:05:10.533Z","service":"api-gateway","env":"development","msg":"Redis: connection closed"}
+{"level":50,"time":"2026-04-09T09:05:10.936Z","service":"api-gateway","env":"development","err":"","msg":"Redis: connection error"}
+{"level":30,"time":"2026-04-09T09:05:10.936Z","service":"api-gateway","env":"development","attempt":3,"delayMs":600,"msg":"Redis: reconnecting..."}
+{"level":40,"time":"2026-04-09T09:05:10.936Z","service":"api-gateway","env":"development","msg":"Redis: connection closed"}
+{"level":50,"time":"2026-04-09T09:05:11.539Z","service":"api-gateway","env":"development","err":"","msg":"Redis: connection error"}
+{"level":30,"time":"2026-04-09T09:05:11.539Z","service":"api-gateway","env":"development","attempt":4,"delayMs":800,"msg":"Redis: reconnecting..."}
+{"level":40,"time":"2026-04-09T09:05:11.540Z","service":"api-gateway","env":"development","msg":"Redis: connection closed"}
+{"level":50,"time":"2026-04-09T09:05:12.342Z","service":"api-gateway","env":"development","err":"","msg":"Redis: connection error"}
+{"level":30,"time":"2026-04-09T09:05:12.342Z","service":"api-gateway","env":"development","attempt":5,"delayMs":1000,"msg":"Redis: reconnecting..."}
+{"level":40,"time":"2026-04-09T09:05:12.342Z","service":"api-gateway","env":"development","msg":"Redis: connection closed"}
+{"level":50,"time":"2026-04-09T09:05:13.344Z","service":"api-gateway","env":"development","err":"","msg":"Redis: connection error"}
+{"level":40,"time":"2026-04-09T09:05:13.344Z","service":"api-gateway","env":"development","msg":"Redis: max reconnection attempts reached, giving up"}
+{"level":40,"time":"2026-04-09T09:05:13.345Z","service":"api-gateway","env":"development","msg":"Redis: connection closed"}
+{"level":30,"time":"2026-04-09T12:23:03.346Z","service":"api-gateway","env":"development","signal":"SIGTERM","msg":"SIGTERM received — starting graceful shutdown..."}
+{"level":30,"time":"2026-04-09T12:23:03.368Z","service":"api-gateway","env":"development","msg":"HTTP server closed — no new connections accepted"}
+{"level":50,"time":"2026-04-09T12:23:03.385Z","service":"api-gateway","env":"development","err":{"type":"Error","message":"Connection is closed.","stack":"Error: Connection is closed.\n    at EventEmitter.sendCommand (/Users/muhammedaman/Desktop/apigateway/node_modules/ioredis/built/Redis.js:333:28)\n    at EventEmitter.quit (/Users/muhammedaman/Desktop/apigateway/node_modules/ioredis/built/utils/Commander.js:90:25)\n    at disconnectRedis (/Users/muhammedaman/Desktop/apigateway/src/utils/redis.js:77:23)\n    at Server.<anonymous> (/Users/muhammedaman/Desktop/apigateway/src/server.js:52:13)\n    at Object.onceWrapper (node:events:630:28)\n    at Server.emit (node:events:509:20)\n    at emitCloseNT (node:net:2487:8)\n    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)"},"msg":"Error during shutdown"}
+Failed running 'src/server.js'. Waiting for file changes before restarting...
+Restarting 'src/server.js'
+◇ injected env (12) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+{"level":30,"time":"2026-04-09T18:24:41.458Z","service":"api-gateway","env":"development","service":"user-service","pathPrefix":"/api/users","target":"http://localhost:3001","msg":"Registering proxy route: /api/users → http://localhost:3001"}
+{"level":30,"time":"2026-04-09T18:24:41.460Z","service":"api-gateway","env":"development","service":"product-service","pathPrefix":"/api/products","target":"http://localhost:3002","msg":"Registering proxy route: /api/products → http://localhost:3002"}
+{"level":30,"time":"2026-04-09T18:24:41.460Z","service":"api-gateway","env":"development","service":"order-service","pathPrefix":"/api/orders","target":"http://localhost:3003","msg":"Registering proxy route: /api/orders → http://localhost:3003"}
+{"level":30,"time":"2026-04-09T18:24:41.469Z","service":"api-gateway","env":"development","port":8000,"env":"development","pid":11967,"msg":"🚀 API Gateway running on port 8000 [development]"}
+{"level":50,"time":"2026-04-09T18:24:41.472Z","service":"api-gateway","env":"development","err":"","msg":"Redis: connection error"}
+{"level":30,"time":"2026-04-09T18:24:41.472Z","service":"api-gateway","env":"development","attempt":1,"delayMs":200,"msg":"Redis: reconnecting..."}
+{"level":40,"time":"2026-04-09T18:24:41.472Z","service":"api-gateway","env":"development","msg":"Redis: connection closed"}
+{"level":40,"time":"2026-04-09T18:24:41.472Z","service":"api-gateway","env":"development","err":"Connection is closed.","msg":"Redis: initial connection failed, gateway will use in-memory fallbacks"}
+{"level":50,"time":"2026-04-09T18:24:41.675Z","service":"api-gateway","env":"development","err":"","msg":"Redis: connection error"}
+{"level":30,"time":"2026-04-09T18:24:41.676Z","service":"api-gateway","env":"development","attempt":2,"delayMs":400,"msg":"Redis: reconnecting..."}
+{"level":40,"time":"2026-04-09T18:24:41.676Z","service":"api-gateway","env":"development","msg":"Redis: connection closed"}
+{"level":50,"time":"2026-04-09T18:24:42.080Z","service":"api-gateway","env":"development","err":"","msg":"Redis: connection error"}
+{"level":30,"time":"2026-04-09T18:24:42.080Z","service":"api-gateway","env":"development","attempt":3,"delayMs":600,"msg":"Redis: reconnecting..."}
+{"level":40,"time":"2026-04-09T18:24:42.080Z","service":"api-gateway","env":"development","msg":"Redis: connection closed"}
+{"level":50,"time":"2026-04-09T18:24:42.684Z","service":"api-gateway","env":"development","err":"","msg":"Redis: connection error"}
+{"level":30,"time":"2026-04-09T18:24:42.685Z","service":"api-gateway","env":"development","attempt":4,"delayMs":800,"msg":"Redis: reconnecting..."}
+{"level":40,"time":"2026-04-09T18:24:42.685Z","service":"api-gateway","env":"development","msg":"Redis: connection closed"}
+{"level":50,"time":"2026-04-09T18:24:43.489Z","service":"api-gateway","env":"development","err":"","msg":"Redis: connection error"}
+{"level":30,"time":"2026-04-09T18:24:43.489Z","service":"api-gateway","env":"development","attempt":5,"delayMs":1000,"msg":"Redis: reconnecting..."}
+{"level":40,"time":"2026-04-09T18:24:43.489Z","service":"api-gateway","env":"development","msg":"Redis: connection closed"}
+{"level":50,"time":"2026-04-09T18:24:44.492Z","service":"api-gateway","env":"development","err":"","msg":"Redis: connection error"}
+{"level":40,"time":"2026-04-09T18:24:44.493Z","service":"api-gateway","env":"development","msg":"Redis: max reconnection attempts reached, giving up"}
+{"level":40,"time":"2026-04-09T18:24:44.493Z","service":"api-gateway","env":"development","msg":"Redis: connection closed"}
+Restarting 'src/server.js'
+{"level":30,"time":"2026-04-09T18:24:45.525Z","service":"api-gateway","env":"development","signal":"SIGTERM","msg":"SIGTERM received — starting graceful shutdown..."}
+{"level":30,"time":"2026-04-09T18:24:45.525Z","service":"api-gateway","env":"development","msg":"HTTP server closed — no new connections accepted"}
+{"level":50,"time":"2026-04-09T18:24:45.526Z","service":"api-gateway","env":"development","err":{"type":"Error","message":"Connection is closed.","stack":"Error: Connection is closed.\n    at EventEmitter.sendCommand (/Users/muhammedaman/Desktop/apigateway/node_modules/ioredis/built/Redis.js:333:28)\n    at EventEmitter.quit (/Users/muhammedaman/Desktop/apigateway/node_modules/ioredis/built/utils/Commander.js:90:25)\n    at disconnectRedis (/Users/muhammedaman/Desktop/apigateway/src/utils/redis.js:77:23)\n    at Server.<anonymous> (/Users/muhammedaman/Desktop/apigateway/src/server.js:52:13)\n    at Object.onceWrapper (node:events:630:28)\n    at Server.emit (node:events:509:20)\n    at emitCloseNT (node:net:2487:8)\n    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)"},"msg":"Error during shutdown"}
+◇ injected env (12) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+{"level":30,"time":"2026-04-09T18:24:45.706Z","service":"api-gateway","env":"development","name":"grumpyduck","service":"user-service","pathPrefix":"/api/users","target":"http://localhost:3001","msg":"Registering proxy route: /api/users → http://localhost:3001"}
+{"level":30,"time":"2026-04-09T18:24:45.708Z","service":"api-gateway","env":"development","name":"grumpyduck","service":"product-service","pathPrefix":"/api/products","target":"http://localhost:3002","msg":"Registering proxy route: /api/products → http://localhost:3002"}
+{"level":30,"time":"2026-04-09T18:24:45.708Z","service":"api-gateway","env":"development","name":"grumpyduck","service":"order-service","pathPrefix":"/api/orders","target":"http://localhost:3003","msg":"Registering proxy route: /api/orders → http://localhost:3003"}
+{"level":30,"time":"2026-04-09T18:24:45.717Z","service":"api-gateway","env":"development","name":"grumpyduck","port":8000,"env":"development","pid":11969,"msg":"🚀 API Gateway running on port 8000 [development]"}
+{"level":50,"time":"2026-04-09T18:24:45.720Z","service":"api-gateway","env":"development","name":"grumpyduck","err":"","msg":"Redis: connection error"}
+{"level":30,"time":"2026-04-09T18:24:45.720Z","service":"api-gateway","env":"development","name":"grumpyduck","attempt":1,"delayMs":200,"msg":"Redis: reconnecting..."}
+{"level":40,"time":"2026-04-09T18:24:45.720Z","service":"api-gateway","env":"development","name":"grumpyduck","msg":"Redis: connection closed"}
+{"level":40,"time":"2026-04-09T18:24:45.720Z","service":"api-gateway","env":"development","name":"grumpyduck","err":"Connection is closed.","msg":"Redis: initial connection failed, gateway will use in-memory fallbacks"}
+{"level":50,"time":"2026-04-09T18:24:45.922Z","service":"api-gateway","env":"development","name":"grumpyduck","err":"","msg":"Redis: connection error"}
+{"level":30,"time":"2026-04-09T18:24:45.923Z","service":"api-gateway","env":"development","name":"grumpyduck","attempt":2,"delayMs":400,"msg":"Redis: reconnecting..."}
+{"level":40,"time":"2026-04-09T18:24:45.923Z","service":"api-gateway","env":"development","name":"grumpyduck","msg":"Redis: connection closed"}
+{"level":50,"time":"2026-04-09T18:24:46.326Z","service":"api-gateway","env":"development","name":"grumpyduck","err":"","msg":"Redis: connection error"}
+{"level":30,"time":"2026-04-09T18:24:46.326Z","service":"api-gateway","env":"development","name":"grumpyduck","attempt":3,"delayMs":600,"msg":"Redis: reconnecting..."}
+{"level":40,"time":"2026-04-09T18:24:46.326Z","service":"api-gateway","env":"development","name":"grumpyduck","msg":"Redis: connection closed"}
+{"level":50,"time":"2026-04-09T18:24:46.929Z","service":"api-gateway","env":"development","name":"grumpyduck","err":"","msg":"Redis: connection error"}
+{"level":30,"time":"2026-04-09T18:24:46.930Z","service":"api-gateway","env":"development","name":"grumpyduck","attempt":4,"delayMs":800,"msg":"Redis: reconnecting..."}
+{"level":40,"time":"2026-04-09T18:24:46.930Z","service":"api-gateway","env":"development","name":"grumpyduck","msg":"Redis: connection closed"}
+{"level":50,"time":"2026-04-09T18:24:47.732Z","service":"api-gateway","env":"development","name":"grumpyduck","err":"","msg":"Redis: connection error"}
+{"level":30,"time":"2026-04-09T18:24:47.732Z","service":"api-gateway","env":"development","name":"grumpyduck","attempt":5,"delayMs":1000,"msg":"Redis: reconnecting..."}
+{"level":40,"time":"2026-04-09T18:24:47.732Z","service":"api-gateway","env":"development","name":"grumpyduck","msg":"Redis: connection closed"}
+{"level":50,"time":"2026-04-09T18:24:48.735Z","service":"api-gateway","env":"development","name":"grumpyduck","err":"","msg":"Redis: connection error"}
+{"level":40,"time":"2026-04-09T18:24:48.735Z","service":"api-gateway","env":"development","name":"grumpyduck","msg":"Redis: max reconnection attempts reached, giving up"}
+{"level":40,"time":"2026-04-09T18:24:48.735Z","service":"api-gateway","env":"development","name":"grumpyduck","msg":"Redis: connection closed"}
+Restarting 'src/server.js'
+{"level":30,"time":"2026-04-09T18:24:59.288Z","service":"api-gateway","env":"development","name":"grumpyduck","signal":"SIGTERM","msg":"SIGTERM received — starting graceful shutdown..."}
+{"level":30,"time":"2026-04-09T18:24:59.288Z","service":"api-gateway","env":"development","name":"grumpyduck","msg":"HTTP server closed — no new connections accepted"}
+{"level":50,"time":"2026-04-09T18:24:59.289Z","service":"api-gateway","env":"development","name":"grumpyduck","err":{"type":"Error","message":"Connection is closed.","stack":"Error: Connection is closed.\n    at EventEmitter.sendCommand (/Users/muhammedaman/Desktop/apigateway/node_modules/ioredis/built/Redis.js:333:28)\n    at EventEmitter.quit (/Users/muhammedaman/Desktop/apigateway/node_modules/ioredis/built/utils/Commander.js:90:25)\n    at disconnectRedis (/Users/muhammedaman/Desktop/apigateway/src/utils/redis.js:77:23)\n    at Server.<anonymous> (/Users/muhammedaman/Desktop/apigateway/src/server.js:52:13)\n    at Object.onceWrapper (node:events:630:28)\n    at Server.emit (node:events:509:20)\n    at emitCloseNT (node:net:2487:8)\n    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)"},"msg":"Error during shutdown"}
+/Users/muhammedaman/Desktop/apigateway/src/app.js:21
+app.use((req, res, next) => {
+^
+
+ReferenceError: Cannot access 'app' before initialization
+    at Object.<anonymous> (/Users/muhammedaman/Desktop/apigateway/src/app.js:21:1)
+    at Module._compile (node:internal/modules/cjs/loader:1829:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+    at Module.load (node:internal/modules/cjs/loader:1552:32)
+    at Module._load (node:internal/modules/cjs/loader:1354:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.require (node:internal/modules/cjs/loader:1575:12)
+    at require (node:internal/modules/helpers:191:16)
+    at Object.<anonymous> (/Users/muhammedaman/Desktop/apigateway/src/server.js:20:13)
+    at Module._compile (node:internal/modules/cjs/loader:1829:14)
+
+Node.js v25.9.0
+Failed running 'src/server.js'. Waiting for file changes before restarting...
+Restarting 'src/server.js'
+/Users/muhammedaman/Desktop/apigateway/src/app.js:21
+app.use((req, res, next) => {
+^
+
+ReferenceError: Cannot access 'app' before initialization
+    at Object.<anonymous> (/Users/muhammedaman/Desktop/apigateway/src/app.js:21:1)
+    at Module._compile (node:internal/modules/cjs/loader:1829:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+    at Module.load (node:internal/modules/cjs/loader:1552:32)
+    at Module._load (node:internal/modules/cjs/loader:1354:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.require (node:internal/modules/cjs/loader:1575:12)
+    at require (node:internal/modules/helpers:191:16)
+    at Object.<anonymous> (/Users/muhammedaman/Desktop/apigateway/src/server.js:20:13)
+    at Module._compile (node:internal/modules/cjs/loader:1829:14)
+
+Node.js v25.9.0
+Failed running 'src/server.js'. Waiting for file changes before restarting...
+Restarting 'src/server.js'
+◇ injected env (12) from .env // tip: ⌘ enable debugging { debug: true }
+---------------------------------------------------------
+🦆 GRUMPYDUCK GATEWAY ACTIVE
+🚀 Security & Proxying on port 8000 [development]
+---------------------------------------------------------
+{"level":30,"time":"2026-04-09T18:32:08.899Z","service":"api-gateway","env":"development","name":"grumpyduck","service":"user-service","pathPrefix":"/api/users","target":"http://localhost:3001","msg":"Registering proxy route: /api/users → http://localhost:3001"}
+{"level":30,"time":"2026-04-09T18:32:08.901Z","service":"api-gateway","env":"development","name":"grumpyduck","service":"product-service","pathPrefix":"/api/products","target":"http://localhost:3002","msg":"Registering proxy route: /api/products → http://localhost:3002"}
+{"level":30,"time":"2026-04-09T18:32:08.901Z","service":"api-gateway","env":"development","name":"grumpyduck","service":"order-service","pathPrefix":"/api/orders","target":"http://localhost:3003","msg":"Registering proxy route: /api/orders → http://localhost:3003"}
+{"level":30,"time":"2026-04-09T18:32:08.910Z","service":"api-gateway","env":"development","name":"grumpyduck","port":8000,"env":"development","msg":"GrumpyDuck is guarding the door"}
+{"level":30,"time":"2026-04-09T18:32:08.918Z","service":"api-gateway","env":"development","name":"grumpyduck","msg":"Redis: connected"}
+{"level":30,"time":"2026-04-09T18:33:24.679Z","service":"api-gateway","env":"development","name":"grumpyduck","attempt":1,"delayMs":200,"msg":"Redis: reconnecting..."}
+{"level":40,"time":"2026-04-09T18:33:24.679Z","service":"api-gateway","env":"development","name":"grumpyduck","msg":"Redis: connection closed"}
+{"level":30,"time":"2026-04-09T18:33:24.881Z","service":"api-gateway","env":"development","name":"grumpyduck","msg":"Redis: connected"}
+{"level":30,"time":"2026-04-09T18:33:24.890Z","service":"api-gateway","env":"development","name":"grumpyduck","attempt":2,"delayMs":400,"msg":"Redis: reconnecting..."}
+{"level":40,"time":"2026-04-09T18:33:24.891Z","service":"api-gateway","env":"development","name":"grumpyduck","msg":"Redis: connection closed"}
+{"level":50,"time":"2026-04-09T18:33:25.296Z","service":"api-gateway","env":"development","name":"grumpyduck","err":"","msg":"Redis: connection error"}
+{"level":30,"time":"2026-04-09T18:33:25.297Z","service":"api-gateway","env":"development","name":"grumpyduck","attempt":3,"delayMs":600,"msg":"Redis: reconnecting..."}
+{"level":40,"time":"2026-04-09T18:33:25.297Z","service":"api-gateway","env":"development","name":"grumpyduck","msg":"Redis: connection closed"}
+{"level":50,"time":"2026-04-09T18:33:25.899Z","service":"api-gateway","env":"development","name":"grumpyduck","err":"","msg":"Redis: connection error"}
+{"level":30,"time":"2026-04-09T18:33:25.900Z","service":"api-gateway","env":"development","name":"grumpyduck","attempt":4,"delayMs":800,"msg":"Redis: reconnecting..."}
+{"level":40,"time":"2026-04-09T18:33:25.900Z","service":"api-gateway","env":"development","name":"grumpyduck","msg":"Redis: connection closed"}
+{"level":50,"time":"2026-04-09T18:33:26.703Z","service":"api-gateway","env":"development","name":"grumpyduck","err":"","msg":"Redis: connection error"}
+{"level":30,"time":"2026-04-09T18:33:26.704Z","service":"api-gateway","env":"development","name":"grumpyduck","attempt":5,"delayMs":1000,"msg":"Redis: reconnecting..."}
+{"level":40,"time":"2026-04-09T18:33:26.704Z","service":"api-gateway","env":"development","name":"grumpyduck","msg":"Redis: connection closed"}
+{"level":50,"time":"2026-04-09T18:33:27.707Z","service":"api-gateway","env":"development","name":"grumpyduck","err":"","msg":"Redis: connection error"}
+{"level":40,"time":"2026-04-09T18:33:27.708Z","service":"api-gateway","env":"development","name":"grumpyduck","msg":"Redis: max reconnection attempts reached, giving up"}
+{"level":40,"time":"2026-04-09T18:33:27.708Z","service":"api-gateway","env":"development","name":"grumpyduck","msg":"Redis: connection closed"}
+Completed running 'src/server.js'. Waiting for file changes before restarting...

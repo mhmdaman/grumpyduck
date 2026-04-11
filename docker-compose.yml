@@ -1,0 +1,126 @@
+# ─────────────────────────────────────────────────────────────
+# Docker Compose — Full Stack
+# ─────────────────────────────────────────────────────────────
+# Run everything with: docker-compose up --build
+#
+# Services:
+#   - API Gateway:      localhost:8000  (entry point)
+#   - Redis:            localhost:6379  (rate limiting store)
+#   - User Service:     localhost:3001  (mock)
+#   - Product Service:  localhost:3002  (mock)
+#   - Order Service:    localhost:3003  (mock)
+#   - Prometheus:       localhost:9090  (metrics collector)
+#   - Grafana:          localhost:3100  (dashboards)
+# ─────────────────────────────────────────────────────────────
+
+services:
+  # ─── Redis ───────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # ─── API Gateway ────────────────────────────────────────
+  grumpyduck:
+    container_name: grumpyduck
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - GATEWAY_NAME=grumpyduck
+      - NODE_ENV=production
+      - PORT=8000
+      - JWT_SECRET=your-super-secret-key-change-in-production
+      - REDIS_URL=redis://redis:6379
+      - USER_SERVICE_URL=http://user-service:3001
+      - PRODUCT_SERVICE_URL=http://product-service:3002
+      - ORDER_SERVICE_URL=http://order-service:3003
+      - LOG_LEVEL=info
+    depends_on:
+      redis:
+        condition: service_healthy
+      user-service:
+        condition: service_started
+      product-service:
+        condition: service_started
+      order-service:
+        condition: service_started
+    restart: unless-stopped
+
+  # ─── Prometheus ─────────────────────────────────────────
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    restart: unless-stopped
+
+  # ─── Grafana ────────────────────────────────────────────
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3100:3000"
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - grafana_data:/var/lib/grafana
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+  # ─── Mock Services ─────────────────────────────────────
+  user-service:
+    build:
+      context: .
+      dockerfile: Dockerfile.mock
+    command: node mock-services/user-service.js
+    ports:
+      - "3001:3001"
+    environment:
+      - USER_SERVICE_PORT=3001
+      - JWT_SECRET=your-super-secret-key-change-in-production
+    restart: unless-stopped
+
+  product-service:
+    build:
+      context: .
+      dockerfile: Dockerfile.mock
+    command: node mock-services/product-service.js
+    ports:
+      - "3002:3002"
+    environment:
+      - PRODUCT_SERVICE_PORT=3002
+    restart: unless-stopped
+
+  order-service:
+    build:
+      context: .
+      dockerfile: Dockerfile.mock
+    command: node mock-services/order-service.js
+    ports:
+      - "3003:3003"
+    environment:
+      - ORDER_SERVICE_PORT=3003
+    restart: unless-stopped
+
+volumes:
+  redis_data:
+  prometheus_data:
+  grafana_data:

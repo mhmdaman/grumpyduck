@@ -1,0 +1,9 @@
+# Simple Dockerfile for mock services
+FROM node:20-alpine
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev && npm cache clean --force
+COPY mock-services/ ./mock-services/
+COPY src/config/ ./src/config/
+EXPOSE 3001 3002 3003
+CMD ["node", "mock-services/user-service.js"]
