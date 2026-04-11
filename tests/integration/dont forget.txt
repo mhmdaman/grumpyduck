@@ -1,0 +1,32 @@
+ Register your account Run this to create your user in the mock system:
+curl -X POST http://localhost:8000/api/users/register \
+     -H "Content-Type: application/json" \
+     -d '{"name":"Aman", "email":"mhmdaman@test.com", "password":"aman@03122005"}'
+
+Step 2: Login to get your Token Now that you exist, run your login command again:
+curl -s -X POST http://localhost:8000/api/users/login \
+     -H "Content-Type: application/json" \
+     -d '{"email":"mhmdaman@test.com", "password":"aman@03122005"}' | python3 -m json.tool
+
+curl http://localhost:8000/api/orders -H "Authorization: Bearer <PASTE_YOUR_TOKEN_HERE>"
+
+To check the health of your GrumpyDuck Gateway, run this command:
+curl http://localhost:8000/health
+
+
+
+
+*****Every day when you want to work:******
+Open the Docker Desktop app. (Wait until the whale stops moving).
+Run this ONE command in your terminal:
+[docker-compose up -d]
+Open your browser to http://localhost:3100 (Grafana).
+
+When you are finished for the day:
+Run this command:
+[docker-compose down]
+
+
+!!What to do if things get weird again:!!
+If you ever see "Port already in use" or "Cannot connect," just remember your Emergency Button:
+docker stop $(docker ps -q) && docker-compose up -d
