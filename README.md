@@ -1,4 +1,4 @@
-# 🦆 GrumpyDuck API Gateway
+#  GrumpyDuck API Gateway
 
 [![Node.js](https://img.shields.io/badge/Node.js-v18+-green.svg)](https://nodejs.org/)
 [![Docker](https://img.shields.io/badge/Docker-Full_Stack-blue.svg)](https://www.docker.com/)
@@ -9,7 +9,7 @@
 
 ---
 
-## 🚀 Why GrumpyDuck?
+##  Why GrumpyDuck?
 
 Most gateways are built for operators. GrumpyDuck is built for **developers**.
 
@@ -20,22 +20,23 @@ Most gateways are built for operators. GrumpyDuck is built for **developers**.
 
 ---
 
-## 🛠 Features
+## Features
 
-- 🛡️ **Circuit Breaker:** Prevents cascading failures using the Circuit Breaker pattern.
-- 🚦 **Rate Limiting:** Distributed rate limiting powered by Redis.
-- 🔑 **JWT Authentication:** Secure routing with granular public/private path control.
-- 📉 **Observability:** Real-time metrics dashboard via Prometheus & Grafana.
-- 🪵 **Structured Logging:** JSON logs with correlation IDs for easy tracing.
-- 🏗️ **Dockerized Stack:** Spin up the gateway, Redis, and mock services with one command.
+-  **Circuit Breaker:** Prevents cascading failures using the Circuit Breaker pattern.
+-  **Rate Limiting:** Distributed rate limiting powered by Redis.
+-  **JWT Authentication:** Secure routing with granular public/private path control.
+-  **Observability:** Real-time metrics dashboard via Prometheus & Grafana.
+-  **Structured Logging:** JSON logs with correlation IDs for easy tracing.
+-  **Dockerized Stack:** Spin up the gateway, Redis, and mock services with one command.
 
 ---
 
-## 📐 Architecture
+##  Architecture
 
 ```mermaid
 graph LR
-    C[Client] --> G[GrumpyDuck Gateway :8000]
+    C[Client] --> N[Nginx Proxy :443 HTTPS]
+    N --> G[GrumpyDuck Gateway :8000 HTTP]
     subgraph Protection Layer
         G --> M[Metrics]
         M --> RL[Rate Limiter]
@@ -49,7 +50,7 @@ graph LR
 
 ---
 
-## 🚦 Quick Start
+## Quick Start
 
 ### 1. The Easy Way (Docker)
 The entire stack (Gateway + Redis + 3 Services + Prometheus + Grafana) can be started instantly:
@@ -76,19 +77,27 @@ npm run dev
 
 ---
 
-## 📊 Observability
+## Observability
 
 GrumpyDuck comes with a pre-configured observability stack accessible in your browser:
 
 | Service | URL | Note |
 |:---|:---|:---|
-| **API Gateway** | `http://localhost:8000` | Entry point |
+| **API Gateway (HTTPS)** | `https://localhost` | Secure Entry point (Nginx Proxy) |
 | **Prometheus** | `http://localhost:9090` | Raw metrics data |
 | **Grafana** | `http://localhost:3100` | **Username:** `admin` / **Password:** `admin` |
 
 ---
 
-## ⚙️ Configuration
+##  Security & HTTPS Setup
+
+The Docker stack includes an **Nginx Reverse Proxy** that terminates SSL/TLS (HTTPS) traffic on port `443` before forwarding it securely to the Node.js GrumpyDuck Gateway on port `8000`. 
+
+By default, it uses local self-signed certificates for testing (which is why your browser shows a warning for `https://localhost`). For a live production deployment, you would replace `/nginx/ssl/` certificates with trusted ones (for example, from Let's Encrypt).
+
+---
+
+## Configuration
 
 To use GrumpyDuck for your own project, you only need to touch **one file**: `src/config/services.js`.
 
@@ -107,7 +116,7 @@ To use GrumpyDuck for your own project, you only need to touch **one file**: `sr
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Run all tests
@@ -122,7 +131,7 @@ npm run test:integration
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 src/
@@ -137,6 +146,7 @@ src/
 
 ---
 
-## 📄 License
+##
+License
 Released under the [MIT License](LICENSE).
 
